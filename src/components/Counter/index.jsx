@@ -3,8 +3,7 @@ import * as ActionCreators from "../../redux/actions/actionCounterCreaters";
 import { connect } from 'react-redux';
 
 function Counter(props) {
-    const { counter, dispatch, step } = props;
-
+    const { counter:{counter,step}, dispatch, } = props;
     const decrement = () => {
         const decrementAction = ActionCreators.decrement();
 
@@ -37,7 +36,6 @@ function Counter(props) {
 function mapStateToProps(state) {
     return {
         counter: state.counter,
-        step: state.step,
     };
 }
 
