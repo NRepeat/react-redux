@@ -1,25 +1,45 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import { connect } from "react-redux";
+import "./App.css";
+import * as ActionCreators from "./redux/actions/actionCreaters";
 
-function App() {
+function App(props) {
+  const { counter, dispatch, step } = props;
+  const decrement = () => {
+    const decrementAction = ActionCreators.decrement();
+
+    dispatch(decrementAction);
+  };
+
+  const increment = () => {
+    const incrementtAction = ActionCreators.increment();
+
+    dispatch(incrementtAction);
+  };
+  const changeStep = ({ target: { value } }) => {
+    const setStepAction = ActionCreators.increasStep(Number(value));
+
+    dispatch(setStepAction);
+  };
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <p>Current count is {counter}</p>
+      <div>
+        <label>
+          Step is <input value={step} onChange={changeStep} />
+        </label>
+      </div>
+      <button onClick={decrement}>-</button>
+      <button onClick={increment}>+</button>
     </div>
   );
 }
 
-export default App;
+function mapStateToProps(state) {
+  return {
+    counter: state.counter,
+    step: state.step,
+  };
+}
+
+export default connect(mapStateToProps)(App);
