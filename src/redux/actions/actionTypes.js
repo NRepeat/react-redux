@@ -3,7 +3,10 @@ const ACTION_TYPES = {
     DECREMENT: 'decrement',
     CHANGESTEP:"changeStap",
 
-    ADDTODOTASK:"addTask"
+    ADDTODOTASK:"addTask",
+    GET_ALL_SUPERHEROS_REQUEST:"getAllSuperherosRequest",
+    GET_ALL_SUPERHEROS_SUCCESS:"getAllSuperherosSuccess",
+    GET_ALL_SUPERHEROS_ERROR:"getAllSuperherosError"
   }
   
   export default ACTION_TYPES;
