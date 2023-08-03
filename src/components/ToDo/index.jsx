@@ -4,13 +4,11 @@ import { connect } from 'react-redux'
 import * as ActionCreators from "../../redux/actions/actionToDoCreater"
 function ToDo(props) {
     const { task, dispatch } = props;
-    console.log(task.task,"asdas")
     const initValues = {
         task: []
     }
 
     const submitHandler = ({task}, formikBag) => {
-        console.log(task)
         const newTask = ActionCreators.addTask(task)
 
         dispatch(newTask)
