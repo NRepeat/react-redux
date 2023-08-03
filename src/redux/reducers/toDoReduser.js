@@ -5,7 +5,6 @@ const initialState = {
 };
 
 export default function toDoReduser(state = initialState, action) {
-  console.log(state.task);
   switch (action.type) {
     case ACTION_TYPES.ADDTODOTASK: {
       const newTask = [...state.task, action.payload];

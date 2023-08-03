@@ -6,5 +6,6 @@ const httpClient = axios.create({
 
 export const getSuperheroAll = async () => {
   const response = await httpClient.get('/superhero/all');
+  console.log(response)
   return response;
 }
