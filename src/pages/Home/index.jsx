@@ -6,8 +6,8 @@ import Superhero from '../../components/Superhero'
 export default function Home() {
     return (
         <>
-            <Counter />
-            <ToDo />
+            {/* <Counter /> */}
+            {/* <ToDo /> */}
             <Superhero/>
         </>
     )
