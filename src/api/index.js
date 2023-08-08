@@ -1,11 +1,15 @@
 import axios from "axios";
 
 const httpClient = axios.create({
-  baseURL: 'http://localhost:5000'
+  baseURL: "http://localhost:5000",
 });
 
-export const getSuperheroAll = async () => {
-  const response = await httpClient.get('/superhero/all');
-  console.log(response)
-  return response;
-}
+const SuperheroAPI = {
+  getSuperheroAll: async () => {
+    const response = await httpClient.get("/superhero/all");
+    return response;
+  },
+  
+};
+
+export { SuperheroAPI };
